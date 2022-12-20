@@ -28,16 +28,17 @@ function displayTime(){
     var sec = dateTime.getSeconds();
     var session = document.getElementById('session');
 
-    if(hrs >= 12){
-        session.innerHTML = 'PM';
-    } else if(hrs > 12){
-        hrs = hrs - 12;
+    
+    if(hrs>=12){
+        hrs =hrs-12;
+        if(hrs<10){
+            hrs = ["0"+hrs]
+        }
+        session.innerHTML= "PM"
     }else{
-        session.innerHTML = 'AM';
+        session.innerHTML="AM"
     }
-
-   
-
+    
     document.getElementById('dhours').innerHTML = hrs;
     document.getElementById('dminutes').innerHTML = min;
     document.getElementById('dseconds').innerHTML = sec;
