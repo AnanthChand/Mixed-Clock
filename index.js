@@ -37,6 +37,17 @@ function displayTime(){
         session.innerHTML= "PM"
     }else{
         session.innerHTML="AM"
+        if(hrs<10){
+            hrs = ["0"+hrs]
+        }
+    }
+
+    if(sec<10){
+        sec = ["0"+sec]
+    }
+
+    if(min<10){
+        min = ["0"+min]
     }
     
     document.getElementById('dhours').innerHTML = hrs;
